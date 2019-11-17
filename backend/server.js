@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
+
 //Static assets 
 if(process.env.NODE_ENV == 'production'){
   //static folder
@@ -15,7 +16,6 @@ if(process.env.NODE_ENV == 'production'){
     res.sendFile(path.resolve(__dirname,'backend','build','index.html'));
   });
 }
-
 
 
 const port = process.env.PORT || 5000;
