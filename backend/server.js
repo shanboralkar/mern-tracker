@@ -17,8 +17,8 @@ if(process.env.NODE_ENV == 'production'){
   });
 }
 
-
-const port = process.env.PORT || "mongodb+srv://new-user-1990:GdcI4vSXL6UdD4NL@cluster0-cztmw.mongodb.net/test?retryWrites=true&w=majority";
+app.set( 'port', ( process.env.PORT || 5000 ));
+//const port = process.env.PORT || "mongodb+srv://new-user-1990:GdcI4vSXL6UdD4NL@cluster0-cztmw.mongodb.net/test?retryWrites=true&w=majority";
 
 app.use(cors());
 app.use(express.json());
@@ -40,6 +40,7 @@ const usersRouter = require('./routes/users');
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-});
+
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
