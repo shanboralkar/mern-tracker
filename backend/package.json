@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+  "postinstall": "npm run build"
   },
   "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix backend && npm run build --prefix backend",
-  "postinstall": "ng build",
   "keywords": [],
   "author": "",
   "license": "ISC",
