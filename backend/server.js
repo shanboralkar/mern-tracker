@@ -18,7 +18,7 @@ if(process.env.NODE_ENV == 'production'){
 }
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || "mongodb+srv://new-user-1990:GdcI4vSXL6UdD4NL@cluster0-cztmw.mongodb.net/test?retryWrites=true&w=majority";
 
 app.use(cors());
 app.use(express.json());
