@@ -24,7 +24,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('/exercises/')
+    axios.get('https://floating-dawn-89482.herokuapp.com/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
@@ -34,7 +34,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('/exercises/'+id)
+    axios.delete('https://floating-dawn-89482.herokuapp.com/exercises/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
